@@ -1,6 +1,6 @@
 def leaders_array(arr):
     """ an element is called leader, if there is no element
-    on its right which is greater than the given element"""
+    on its right which is greater than the given element in the array"""
 
     n = len(arr)
     L = []
