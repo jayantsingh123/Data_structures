@@ -10,12 +10,6 @@ def add_waitlist(waitlist, id):
 
 def remove_waitlist(waitlist, id):
     pass
-
-
-
-
-
-
 def main_fn(seats_avail, paying_guests, guest_movement):
     seated, waitlist, eat = set(),[],[0]*len(paying_guests)
     for i in range(len(guest_movement)):
@@ -31,9 +25,10 @@ def main_fn(seats_avail, paying_guests, guest_movement):
                     waitlist.append(guest_movement[i])
                 else:
                     # get bored and leave
-                    waitlist.pop(guest_movement[i])
+                    waitlist.remove(guest_movement[i])
 
         elif eat[guest_movement[i]]==1:
+            print(guest_movement[i])
             # if in seated, then remove it
             if guest_movement[i] in seated:
                 seated.remove(guest_movement[i])
@@ -50,11 +45,14 @@ def main_fn(seats_avail, paying_guests, guest_movement):
                     if guest_movement[i] not in waitlist:
                         waitlist.append(guest_movement[i])
                     else:
-                        waitlist.pop(guest_movement[i])
+                        waitlist.remove(guest_movement[i])
                 else:
                     seated.add(guest_movement[i])
                     seats_avail-=1
     return eat
+
+if __name__=="__main__":
+    res = main_fn(2,[10,15,5,8],[0,1,2,1,3,2,3,0])
 
 
 
