@@ -52,7 +52,7 @@ def main_fn(seats_avail, paying_guests, guest_movement):
     return eat
 
 if __name__=="__main__":
-    res = main_fn(2,[10,15,5,8],[0,1,2,1,3,2,3,0])
+    res = main_fn(2,[10,15,5],[0,1,2,2,1,0])
 
 
 
