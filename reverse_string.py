@@ -10,7 +10,7 @@ def main_fn(text):
     dnew=defaultdict(int)
     for i in L:
         if dnew[i]!=0:
-            rev_txt.append(dnew[i])
+            rev_txt.append(dnew[i])  #add reversed string
         else:
             rev = reverse(i)
             dnew[i] = rev
